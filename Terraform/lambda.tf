@@ -2,7 +2,7 @@ resource "aws_lambda_function" "birthday_lambda" {
 
   function_name = "birthday-lambda"
 
-  filename      = "lambda.zip"
+  filename      = "file.zip"
   handler       = "lambda_function.lambda_handler"
   runtime       = "python3.12"
 
