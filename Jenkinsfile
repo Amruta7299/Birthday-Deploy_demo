@@ -1,31 +1,40 @@
+
 pipeline {
+
     agent any
 
     stages {
 
-        stage('Clone Repo') {
+        stage('Checkout Code') {
             steps {
-                git 'https://github.com/yourrepo/birthday-devops-project.git'
+                echo "Repository pulled from GitHub"
             }
         }
 
-        stage('Terraform Init') {
+        stage('Build') {
             steps {
-                sh 'cd terraform && terraform init'
+                echo "Building the project..."
             }
         }
 
-        stage('Terraform Apply') {
+        stage('Package Lambda') {
             steps {
-                sh 'cd terraform && terraform apply -auto-approve'
+                sh '''
+                cd lambda
+                zip file.zip lambdafun.py
+                '''
             }
         }
 
-        stage('Deploy Website') {
+        stage('Deploy Lambda') {
             steps {
-                sh 'aws s3 sync website/ s3://amruta-birthday-site'
+                sh '''
+                aws lambda update-function-code \
+                --function-name birthday-site \
+                --zip-file fileb://lambda/file.zip
+                '''
             }
         }
+
     }
 }
-
