@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday My Love ....</title>
+    <meta name="description" content="A beautiful birthday celebration page.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="background-elements">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <!-- Hidden audio for Page 1 BGM -->
+    <audio id="bg-music-1" loop>
+        <source src="music.mp3" type="audio/mpeg">
+        <source src="https://upload.wikimedia.org/wikipedia/commons/c/c2/Happy_Birthday_to_You_%28Vocal%29.ogg"
+            type="audio/ogg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <main class="container">
+
+        <!-- Page 1: Hero / Welcome -->
+        <section id="page-1" class="page active">
+            <div class="glass-card text-center hero-card">
+                <span class="badge">Special Day</span>
+                <h1 class="glow-text">
+                    <span class="color-1">Happy</span>
+                    <span class="color-2">Birthday</span>
+                    <span class="color-3">My</span>
+                    <span class="color-4">love</span>❤️😘
+                </h1>
+                <p class="subtitle">Wishing you a day filled with happiness and a year filled with joy. A beautiful
+                    celebration awaits.</p>
+                <div class="image-wrapper hero-img">
+                    <img src="images/dudu_bubu.png" alt="Cute Dudu Bubu Birthday">
+                </div>
+
+                <button class="btn primary-btn mt-4" onclick="navigateTo(2)">
+                    <span class="btn-text">show ur love </span>
+                    <span class="btn-icon">✨</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Page 2: Photos & Music -->
+        <section id="page-2" class="page">
+            <div class="glass-card">
+                <h2 class="glow-text section-title">Memories</h2>
+                <div class="music-info text-center" style="margin-bottom: 20px;">
+                    <div class="music-icon" style="margin: 0 auto 10px auto;">🎵</div>
+                    <span style="font-weight: bold; color: var(--accent-1);">Now Play</span>
+                    <div style="margin-top: 15px;">
+                        <button id="music-toggle-btn" class="btn secondary-btn" onclick="toggleMusic()"
+                            style="font-size: 0.9rem; padding: 8px 16px;">
+                            Stop Music
+                        </button>
+                    </div>
+                </div>
+
+                <div id="lyrics-container" class="glass-card"
+                    style="margin-bottom: 30px; padding: 20px; text-align: center; border: 1px solid var(--accent-1); border-radius: 15px;">
+                    <h3 style="color: var(--accent-2); margin-bottom: 10px;">Lyrics</h3>
+                    <p style="font-style: italic; color: var(--text-main); line-height: 1.8;">
+                        You are not just my love, you are my peace, my happiness, and my home. ❤️
+                        Like the song says, “Tu chahiye shaam-o-subah… dil ko teri maujoodgi ka ehsaas chahiye.” 🎶✨
+                        <br>
+
+                    </p>
+                </div>
+
+                <div id="tu-chahiye-container" style="display: none;">
+                    <!-- JS will inject the iframe here when navigating to page 2 -->
+                </div>
+
+                <div class="photo-grid">
+                    <div class="photo-item image-wrapper"
+                        onclick="openPhotoModal('images/memory1.jpeg', 'You make my heart smile every single day. You are my gratest advanture & my favorite person , without u im nothing thank u for always there for me 💖')">
+                        <img src="images/memory1.jpeg" alt="Memory 1" style="cursor: pointer;">
+                    </div>
+                    <div class="photo-item image-wrapper"
+                        onclick="openPhotoModal('images/memory2.jpeg', 'I cherish every moment spent with you.Every moment spent with you is like a beautiful dream come true. Here is to making many more unforgettable memories togethery 🥰')">
+                        <img src="images/memory2.jpeg" alt="Memory 2" style="cursor: pointer;">
+                    </div>
+                    <div class="photo-item image-wrapper"
+                        onclick="openPhotoModal('images/memory3.jpeg', 'You are my favorite distraction. 😍')">
+                        <img src="images/memory3.jpeg" alt="Memory 3" style="cursor: pointer;">
+                    </div>
+                </div>
+
+                <div class="nav-buttons mt-4">
+                    <button class="btn secondary-btn" onclick="navigateTo(1)">Back</button>
+                    <button class="btn primary-btn" onclick="navigateTo(3)">Next</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page 3: Photo Messages -->
+        <section id="page-3" class="page" style="background-image: url('images/memory4.jpeg'); background-size: cover; background-position: center; border-radius: 20px;">
+            <div class="glass-card" style="background: rgba(0, 0, 0, 0.4); backdrop-filter: none; border: none;">
+                <h2 class="glow-text section-title">For YOu</h2>
+                <p class="section-desc" style="color: #fff;">Messages from the heart, just for you.</p>
+
+                <div class="message-card card-inner" style="background: transparent; border: none; box-shadow: none;">
+                    <div class="msg-content" style="width: 100%; text-align: left;">
+                        <ul style="color: #fff; padding-left: 20px; font-style: italic; line-height: 1.8; font-size: 1.05rem; list-style-type: none;">
+                            <li style="margin-bottom: 20px;"><strong>Happy Birthday My Love ❤️🎂✨</strong></li>
+
+                            <li style="margin-bottom: 15px;">Today is the most beautiful day for me, because the most special person in my life was born
+                            today. I feel so lucky and blessed to have you in my life. You are not just my love, you are
+                            my happiness, my comfort, and the most beautiful part of my world. 💖</li>
+
+                            <li style="margin-bottom: 15px;">We have shared so many special moments together — the laughter 😂, the long talks 🌙, the
+                            silly jokes, the surprises, and even our little fights 😅. Sometimes we argue, sometimes we
+                            get upset, but the best thing is that no matter what happens, we always find our way back to
+                            each other with a smile. And honestly, those moments make our bond even stronger. 🤍</li>
+
+                            <li style="margin-bottom: 15px;">I love every moment with you. I love the way you smile 😊, the way you care for me, and the
+                            way you make my life brighter just by being in it. Being with you feels like home. 🏡❤️</li>
+
+                            <li style="margin-bottom: 15px;">I want many more days like this with you… more memories, more adventures 🌍, more late night
+                            conversations 🌙, more laughter, and even those small fights that end with us smiling and
+                            loving each other even more. Please stay with me, keep loving me, keep fighting with me, and
+                            keep choosing me every single day. 🤝❤️</li>
+
+                            <li style="margin-bottom: 15px;">Always remember one thing — I am always here for you. In your happy moments 😊, in your sad
+                            days 😔, in your dreams ✨, and in your struggles. No matter what happens in life, I will
+                            always stand beside you and support you. 🤗</li>
+
+                            <li style="margin-bottom: 15px;">You are very special to me, more than words can explain. You mean the world to me. I truly
+                            love you from the bottom of my heart. ❤️</li>
+
+                            <li style="margin-bottom: 15px;">Happy Birthday once again my love 🎂🎉<br>
+                            May your life be filled with happiness, success, love, and endless smiles. 😊💫</li>
+
+                            <li><strong>Forever yours ❤️❤️</strong></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="nav-buttons mt-4">
+                    <button class="btn secondary-btn" onclick="navigateTo(2)">Back</button>
+                    <button class="btn primary-btn" onclick="navigateTo(1)">Back to Start</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Modal for Photo Clicks -->
+    <div id="photo-modal" class="modal">
+        <div class="modal-content glass-card">
+            <span class="close-btn" onclick="closePhotoModal()">&times;</span>
+            <div id="modal-img-container" class="image-wrapper" style="margin-top: 0; max-width: 300px;">
+                <img id="modal-img" src="" alt="Popup Photo">
+            </div>
+            <p id="modal-text" class="glow-text" style="font-size: 1.5rem; margin-top: 15px;"></p>
+
+            <!-- Hidden Audio specifically for the popup -->
+            <audio id="popup-audio" loop>
+                <!-- Romantic popup music -->
+                <source
+                    src="https://cdn.pixabay.com/download/audio/2022/11/06/audio_4125272a0f.mp3?filename=romantic-piano-126284.mp3"
+                    type="audio/mpeg">
+            </audio>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
